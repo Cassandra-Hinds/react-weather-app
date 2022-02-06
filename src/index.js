@@ -9,6 +9,15 @@ function App() {
   return (
     <div class="container">
       <Weather />
+      <footer>
+        Coded by Cassandra Hinds on {""}
+        <a
+          href="https://github.com/Cassandra-Hinds/react-weather-app"
+          target={"_blank"}
+        >
+          Github
+        </a>
+      </footer>
     </div>
   );
 }
