@@ -48,7 +48,7 @@ border border-primary border border-2
         <span> {weatherData.humidity}</span>%
       </div>
       <div className="wind">
-        <i className="fas fa-wind wind-icon"></i>Wind:
+        <i className="fas fa-wind wind-icon"></i> Wind:
         <span> {weatherData.wind}</span>m/h
       </div>
     </div>

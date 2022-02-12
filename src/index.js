@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
+import "bootstrap/dist/css/bootstrap.css";
+
 import "./App.css";
 
 import reportWebVitals from "./reportWebVitals";
