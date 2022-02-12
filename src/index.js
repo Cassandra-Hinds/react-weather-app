@@ -9,7 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <Weather />
       <footer>
         Coded by Cassandra Hinds on {""}
