@@ -9,7 +9,7 @@ export default function Weather() {
     setWeatherData({
       ready: true,
       city: "New York",
-      date: "Friday 12:30pm",
+      date: new Date(response.data.dt * 1000),
       weather: response.data.weather[0].description,
       weatherIcon: "https://openweathermap.org/img/wn/10d@2x.png",
       temp: response.data.main.temp,
@@ -39,7 +39,7 @@ border border-primary border border-2
         <button>Current Location</button>
         <div>
           <div className="city">{weatherData.city}</div>
-          <div className="day-and-time">{weatherData.date}</div>
+          <div className="day-and-time">{weatherData.date.getDay()}</div>
           <div className="weather text-capitalize">{weatherData.weather}</div>
           <div className="clearfix current-temperature">
             <img
