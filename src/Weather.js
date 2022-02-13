@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -39,7 +40,9 @@ border border-primary border border-2
         <button>Current Location</button>
         <div>
           <div className="city">{weatherData.city}</div>
-          <div className="day-and-time">{weatherData.date.getDay()}</div>
+          <div className="day-and-time">
+            <FormattedDate date={weatherData.date} />{" "}
+          </div>
           <div className="weather text-capitalize">{weatherData.weather}</div>
           <div className="clearfix current-temperature">
             <img
