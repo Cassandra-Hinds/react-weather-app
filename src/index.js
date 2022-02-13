@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
-import WeatherInfo from "./WeatherInfo";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 import "./App.css";
@@ -11,7 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 function App() {
   return (
     <div className="container">
-      <Weather />
+      <Weather defaultCity="New York" />
       <footer>
         Coded by Cassandra Hinds on {""}
         <a
