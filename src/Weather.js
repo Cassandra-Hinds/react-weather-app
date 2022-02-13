@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -9,7 +10,7 @@ export default function Weather() {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      city: "New York",
+      city: response.data.name,                   ,
       date: new Date(response.data.dt * 1000),
       weather: response.data.weather[0].description,
       weatherIcon: "https://openweathermap.org/img/wn/10d@2x.png",
@@ -38,32 +39,7 @@ border border-primary border border-2
           />
         </form>
         <button>Current Location</button>
-        <div>
-          <div className="city">{weatherData.city}</div>
-          <div className="day-and-time">
-            <FormattedDate date={weatherData.date} />{" "}
-          </div>
-          <div className="weather text-capitalize">{weatherData.weather}</div>
-          <div className="clearfix current-temperature">
-            <img
-              src={weatherData.weatherIcon}
-              alt="weather icon"
-              className="float-left"
-            />
-            <span className="float-left">
-              <span>{Math.round(weatherData.temp)}</span>
-              <span className="fahren">°F</span>
-            </span>
-          </div>
-        </div>
-        <div className="humidity">
-          <i className="fas fa-temperature-high humidity-icon"></i> Humidity:
-          <span> {weatherData.humidity}</span>%
-        </div>
-        <div className="wind">
-          <i className="fas fa-wind wind-icon"></i> Wind:
-          <span> {Math.round(weatherData.wind)}</span>m/h
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
