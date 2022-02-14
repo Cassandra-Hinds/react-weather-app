@@ -11,7 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 function App() {
   return (
     <div className="container">
-      <Weather defaultCity="New York" />
+      <Weather defaultCity="New York"  />
       <footer>
         Coded by Cassandra Hinds on {""}
         <a
