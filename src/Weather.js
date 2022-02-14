@@ -5,28 +5,43 @@ import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, SetCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      city: response.data.name,                   ,
+      city: response.data.name,
       date: new Date(response.data.dt * 1000),
       weather: response.data.weather[0].description,
-      weatherIcon: "https://openweathermap.org/img/wn/10d@2x.png",
+      weatherIcon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temp: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
     });
   }
+  function search() {
+    let apiKey = "2718952144ed077c12e7c160fb6fc351";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    SetCity(event.target.value);
+  }
 
   if (weatherData.ready) {
     return (
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="Search | Enter a city"
+            onChange={handleCityChange}
             className="
 form-control
 shadow-none
@@ -43,10 +58,7 @@ border border-primary border border-2
       </div>
     );
   } else {
-   
-    let apiKey = "2718952144ed077c12e7c160fb6fc351";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
 
     return "Loading...";
   }
