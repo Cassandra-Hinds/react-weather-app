@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
 
       <div className="weather text-capitalize">{props.data.weather}</div>
 
-      <div className="clearfix current-temperature">
+      <div className="clearfix current-temp">
         <img
           src={props.data.weatherIcon}
           alt="weather icon"

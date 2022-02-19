@@ -11,8 +11,8 @@ import reportWebVitals from "./reportWebVitals";
 function App() {
   return (
     <div className="container">
-      <Weather defaultCity="New York"  />
-      <footer>
+      <Weather defaultCity="New York" />
+      <footer className="credit">
         Coded by Cassandra Hinds on {""}
         <a
           href="https://github.com/Cassandra-Hinds/react-weather-app"
