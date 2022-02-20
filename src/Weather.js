@@ -63,6 +63,6 @@ border border-primary border border-2
   } else {
     search();
 
-    return "Loading...";
+    return <div className="text-center loading">Loading...</div>;
   }
 }

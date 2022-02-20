@@ -144,7 +144,16 @@ a .active {
 .credit {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  font-weight: 300;
-  color: #fff;
+  font-weight: 500;
+  color: #90e0ff;
   margin-top: 150px;
+}
+
+.git-link {
+  color: #ffb5b5;
+}
+.loading {
+  margin-top: 250px;
+  font-size: 50px;
+  color: #90e0ff;
 }

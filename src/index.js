@@ -13,11 +13,12 @@ function App() {
     <div className="container">
       <Weather defaultCity="New York" />
       <footer className="credit">
-        Coded by Cassandra Hinds on {""}
+        Coded by Cassandra L. Hinds on {""}
         <a
           href="https://github.com/Cassandra-Hinds/react-weather-app"
           target={"_blank"}
           rel="noreferrer"
+          className="git-link"
         >
           Github
         </a>
