@@ -62,7 +62,9 @@ a {
   font-weight: bold;
   margin-bottom: 100px;
 }
-
+.current-temp-icon {
+  margin-top: 50px;
+}
 .fahren,
 .cels {
   font-size: 20px;

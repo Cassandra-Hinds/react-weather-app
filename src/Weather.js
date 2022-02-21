@@ -16,7 +16,7 @@ export default function Weather(props) {
       coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
       weather: response.data.weather[0].description,
-      weatherIcon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      weatherIcon: response.data.weather[0].icon,
       temp: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -55,7 +55,7 @@ border border-primary border border-2
 "
           />
         </form>
-        <button>Current Location</button>
+
         <WeatherInfo data={weatherData} />
         <WeatherForecast coord={weatherData.coord} />
       </div>
